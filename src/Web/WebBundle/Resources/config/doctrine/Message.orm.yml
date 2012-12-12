@@ -1,0 +1,22 @@
+Web\WebBundle\Entity\Message:
+  type: entity
+  table: message
+  id:
+      id:
+        type: integer
+        generator: { strategy: AUTO }
+  fields:
+    name:
+        type: string
+        length: 255
+    telefon:
+        type: string
+        length: 255
+    mail:
+        type: string
+        length: 255
+        unique: true
+    description:
+        type: text
+    date:
+        type: datetime

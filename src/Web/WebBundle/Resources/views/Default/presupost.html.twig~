@@ -1,0 +1,25 @@
+{% extends 'WebWebBundle::layout.html.twig' %}
+
+{% block stylesheets %} 
+	 <link rel="stylesheet" href="{{ asset('bundles/webweb/css/style.css') }}" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %} 
+{% endblock %}
+
+{% block menu %} 
+	<div class="menu">
+		   <a href="{{ path('index') }}"> Index </a>
+		   <a href="{{ path('qui_som') }}"> Qui som </a>
+		   <a class="active" href="{{ path('presupost') }}"> Presupost </a>
+	</div>
+{% endblock %}
+
+{% block content %}																							
+	<form action="{{ path('create_message') }}" method="post" {{ form_enctype(form) }}>
+		{{ form_widget(form) }}
+
+		<input type="submit" />
+	</form>
+{% endblock %}
+

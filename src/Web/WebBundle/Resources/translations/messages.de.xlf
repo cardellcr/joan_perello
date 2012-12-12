@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="ca" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>Index</source>
+                <target>sldfjslkdfjslkdf</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>Qui som</source>
+                <target>sldkjfsldkfjsld</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Feines</source>
+                <target>slkdfjlsdjkf</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>Presupost</source>
+                <target>sñldkfsñldk</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

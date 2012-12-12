@@ -1,0 +1,42 @@
+{% extends 'WebWebBundle::layout.html.twig' %}
+
+{% block stylesheets %} 
+	 <link rel="stylesheet" href="{{ asset('bundles/WebWeb/css/style.css') }}" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %} 
+{% endblock %}
+
+{% block menu %} 
+	<div class="menu">
+		   <a href="{{ path('index') }}"> Index </a>
+		   <a class="active" href="{{ path('qui_som') }}"> Qui som </a>
+		   <a href="{{ path('presupost') }}"> Presupost </a>
+	</div>
+{% endblock %}
+
+{% block content %}																							
+	<div id="qui_som_left">
+		<div class="title">Qui som?</div>
+		<div class="description">
+			Som una empresa familiar Som una empresa familiar Som una empresa<br/>
+			Som una empresa familiar Som una empresa familiar Som una empresa<br/>
+			Som una empresa familiar Som una empresa familiar Som una empresa<br/>
+			Som una empresa familiar Som una empresa familiar Som una empresa<br/>
+		</div>
+		<div class="title" style="margin-top:40px;">Adreça</div>
+		<div class="description">
+			C/Botella nº tap, Muro, Mallorca
+		</div>
+		<div class="title" style="margin-top:40px;">Contacte</div>
+		<div class="description">
+			telf : 600 600 600 (Joan)<br/>
+			email: contacte@joanperello.com
+		</div>
+	</div>
+	<div id="qui_som_right">
+		<div class="title">Ubicacio</div>
+	<img src="{{ asset('bundles/WebWeb/images/planol.png') }}" height="240px" width="415px" style="margin-top:10px;"/>
+	</div>
+{% endblock %}
+

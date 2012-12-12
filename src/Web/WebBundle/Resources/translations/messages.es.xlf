@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="ca" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>Index</source>
+                <target>Inicio</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>Qui som</source>
+                <target>Quienes somos</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Feines</source>
+                <target>Trabajos</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>Presupost</source>
+                <target>Presupuesto</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>Adreça</source>
+                <target>Dirección</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>Contacte</source>
+                <target>Contacto</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>Ubicació</source>
+                <target>Ubicación</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>text_qui_som</source>
+                <target>
+                    <![CDATA[
+                    Sommos una empresa familiar Som una empresa familiar Som una empresa<br/>
+                    Somosm una empresa familiar Som una empresa familiar Som una empresa<br/>
+                    Sommos una empresa familiar Som una empresa familiar Som una empresa<br/>
+                    Som una empresa familiar Som una empresa familiar Som una empresa<br/>
+                    ]]>
+                </target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>C/</source>
+                <target>C/</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>nº</source>
+                <target>nº</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

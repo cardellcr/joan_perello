@@ -1,0 +1,7 @@
+web\webBundle\Entity\message:
+    properties:
+    name:
+        - NotBlank: ~
+    mail:
+        - NotBlank: ~
+        - Email: ~

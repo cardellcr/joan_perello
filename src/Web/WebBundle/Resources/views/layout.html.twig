@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      {% block title %}
+          title 
+      {% endblock %}
+    </title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" href="{{ asset('bundles/webweb/css/style.css') }}" type="text/css" media="all" />
+    {% block stylesheets %}
+    {% endblock %}
+
+    {% block javascripts %}
+    {% endblock %}
+
+    <link rel="shortcut icon" href="{{ asset('bundles/ensjobeet/images/favicon.ico') }}" />
+  </head>
+  <body>
+	<div id="container">
+            <div id="header">
+                <div id="language">
+                    <a href="{{ path(app.request.attributes.get('_route'), { '_locale': 'ca' }) }}">CAT</a>-
+                    <a href="{{ path(app.request.attributes.get('_route'), { '_locale': 'es' }) }}">ESP</a>-
+                    <a href="{{ path(app.request.attributes.get('_route'), { '_locale': 'en' }) }}">ENG</a>-
+                    <a href="{{ path(app.request.attributes.get('_route'), { '_locale': 'de' }) }}">DEU</a>
+                </div>
+
+                {% block header %}
+                    <div id="logo"> 
+                        <div id="name">JOAN PERELLÓ</div>
+                        <div id="sub_name">ENRAJOLATS I REFORMES MENORS</div>
+                    </div>
+                {% endblock %}
+
+                <div id="menu">
+                    {% block menu %}
+                    {% endblock %}
+                </div>
+            </div>
+            <div class="separator"></div>
+            <div id="content">
+                {% block content %}
+                {% endblock %}
+            </div>
+            <div id="footer">   
+                <div class="menu_footer">
+                   <a href="{{ path('index') }}">{% trans %}Index{% endtrans %}</a>
+                   <a href="{{ path('qui_som') }}">{% trans %}Qui som{% endtrans %}</a>
+                   <a href="{{ path('feines') }}">{% trans %}Feines{% endtrans %}</a>
+                   <a href="{{ path('presupost') }}">{% trans %}Presupost{% endtrans %}</a>
+                </div>
+            </div>
+	</div>
+  </body>
+</html>

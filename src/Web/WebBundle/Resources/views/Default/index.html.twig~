@@ -1,0 +1,30 @@
+{% extends 'WebWebBundle::layout.html.twig' %}
+
+{% block stylesheets %} 
+	 <link rel="stylesheet" href="{{ asset('bundles/WebWeb/css/style.css') }}" type="text/css" media="all" />
+{% endblock %}
+
+{% block javascripts %} 
+	 <link rel="stylesheet" href="{{ asset('bundles/WebWeb/js/jquery-1.8.3.min.js') }}" type="text/javascript" />
+	 <link rel="stylesheet" href="{{ asset('bundles/WebWeb/js/jqFancyTransitions.1.8.min.js') }}" type="text/javascript" />
+	
+	<script>
+		$(document).ready( function(){
+			$('slideshowHolder').jqFancyTransitions({ width: 400, height: 300 });
+		});
+	</script>
+
+{% endblock %}
+
+{% block menu %} 
+	<div class="menu">
+		   <a class="active" href="{{ path('index') }}"> Index </a>
+		   <a href="{{ path('qui_som') }}"> Qui som </a>
+		   <a href="{{ path('presupost') }}"> Presupost </a>
+	</div>
+{% endblock %}
+
+{% block content %}																							
+	<img src="{{ asset('bundles/WebWeb/images/cuina3.jpg') }}"/>
+{% endblock %}
+

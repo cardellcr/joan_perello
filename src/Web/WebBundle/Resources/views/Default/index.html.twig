@@ -1,0 +1,21 @@
+{% extends 'WebWebBundle::layout.html.twig' %}
+
+{% block stylesheets %} 
+{% endblock %}
+
+{% block javascripts %} 
+{% endblock %}
+
+{% block menu %} 
+    <div class="menu">
+       <a class="active" href="{{ path('index') }}">{% trans %}Index{% endtrans %}</a>
+       <a href="{{ path('qui_som') }}">{% trans %}Qui som{% endtrans %}</a>
+       <a href="{{ path('feines') }}">{% trans %}Feines{% endtrans %}</a>
+       <a href="{{ path('presupost') }}">{% trans %}Presupost{% endtrans %}</a>
+    </div>
+{% endblock %}
+
+{% block content %}																							
+	<img src="{{ asset('bundles/webweb/images/cuina3.jpg') }}"/>
+{% endblock %}
+

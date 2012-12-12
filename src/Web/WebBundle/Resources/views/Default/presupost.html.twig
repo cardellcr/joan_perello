@@ -1,0 +1,32 @@
+{% extends 'WebWebBundle::layout.html.twig' %}
+
+{% block stylesheets %} 
+{% endblock %}
+
+{% block javascripts %} 
+{% endblock %}
+
+{% block menu %} 
+    <div class="menu">
+       <a href="{{ path('index') }}">{% trans %}Index{% endtrans %}</a>
+       <a href="{{ path('qui_som') }}">{% trans %}Qui som{% endtrans %}</a>
+       <a href="{{ path('feines') }}">{% trans %}Feines{% endtrans %}</a>
+       <a class="active" href="{{ path('presupost') }}">{% trans %}Presupost{% endtrans %}</a>
+    </div>
+{% endblock %}
+
+{% block content %}																							
+	<form action="{{ path('new_message') }}" method="post" {{ form_enctype(form) }}>
+            <div id="presupost_left">
+                <div>{{ form_label(form.name) }}:</div><div>{{ form_widget(form.name) }}</div>
+                <div>{{ form_label(form.telefon) }}:</div><div>{{ form_widget(form.telefon) }}</div>
+                <div>{{ form_label(form.mail) }}:</div><div>{{ form_widget(form.mail) }}</div>
+            </div>
+            <div id="presupost_right">
+		<div>{{ form_label(form.description) }}:</div>{{ form_widget(form.description) }}
+            </div>
+		<input type="submit" />
+	</form>
+        <div class="telefon"><img height="22px" src="{{ asset('bundles/webweb/images/phone.png') }}"/> 600 600 600 (Joan)</div>
+{% endblock %}
+

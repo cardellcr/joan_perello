@@ -1,0 +1,15 @@
+index:
+    pattern:  /index
+    defaults: { _controller: WebWebBundle:Default:index }
+
+qui_som:
+    pattern:  /qui_som
+    defaults: { _controller: WebWebBundle:Default:qui_som }
+
+presupost:
+    pattern:  /presupost
+    defaults: { _controller: WebWebBundle:Default:presupost }
+
+create_message:
+    pattern:  /create_message
+    defaults: { _controller: WebWebBundle:Default:create_message }

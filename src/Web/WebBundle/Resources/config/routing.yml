@@ -1,0 +1,25 @@
+index:
+    pattern:  /{_locale}/index
+    defaults: { _controller: WebWebBundle:Default:index, _locale: ca }
+    requirements:
+        _locale: ca|es|en|de
+qui_som:
+    pattern:  /{_locale}/qui_som
+    defaults: { _controller: WebWebBundle:Default:qui_som, _locale: ca }
+    requirements:
+        _locale: ca|es|en|de
+feines:
+    pattern:  /{_locale}/feines
+    defaults: { _controller: WebWebBundle:Default:feines, _locale: ca }
+    requirements:
+        _locale: ca|es|en|de
+presupost:
+    pattern:  /{_locale}/presupost
+    defaults: { _controller: WebWebBundle:Default:presupost, _locale: ca }
+    requirements:
+        _locale: ca|es|en|de
+new_message:
+    pattern:  /{_locale}/new_message
+    defaults: { _controller: WebWebBundle:Default:new_message, _locale: ca }
+    requirements:
+        _locale: ca|es|en|de

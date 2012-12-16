@@ -6,20 +6,48 @@
 
 {% block javascripts %}
     <script type="text/javascript" src="{{ asset('bundles/webweb/js/jquery.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('bundles/webweb/js/jquery.lightbox-0.5.js') }}"></script>
 
     <script type="text/javascript">
         $(function() {
-            // Use this example, or...
-            $('a[@rel*=lightbox]').lightBox(); // Select all links that contains lightbox in the attribute class
-            // This, or...
-            //$('#gallery a').lightBox(); // Select all links in object with gallery ID
-            // This, or...
-            //$('a.pep').lightBox(); // Select all links with lightbox class
-            // This, or...
-            //$('a').lightBox(); // Select all links in the page
-            // ... The possibility are many. Use your creative or choose one in the examples above
+
+          var lightboxHTML = '<div id="overlay"></div>' +
+                             '<div id="lightbox">' +
+                             '<a href="#" id="close">Close</a>' +
+                             '<img/>' + '<p/>' + '</div>';
+
+          $(lightboxHTML).appendTo('body').hide();
+
+          $('#overlay').css('opacity', '0.8');
+
+          $('li', '#gallery').each(function() {
+  
+            var $li = $(this);
+            var $a = $li.find('a');
+
+            $a.click(function(event) {
+
+              var src = $a.find('img').attr('src');
+              var alt = $a.find('img').attr('alt');
+
+              $('img', '#lightbox').attr('src', src);
+              $('p', '#lightbox').text(alt);
+
+              $('#overlay, #lightbox').show();
+
+              event.preventDefault();
+            });
+
         });
+
+        $('#close', '#lightbox').click(function(event) {
+  
+            $('#lightbox, #overlay').hide();
+
+            event.preventDefault();
+        });
+
+        });
+
     </script>
 {% endblock %}
 
@@ -33,37 +61,27 @@
 {% endblock %}
 
 {% block content %}																							
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image1.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image1.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image2.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image2.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image3.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image3.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image4.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image4.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image5.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image5.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image1.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image1.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image2.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image2.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image3.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image3.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image4.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image4.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image5.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image5.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image1.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image1.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image2.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image2.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image3.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image3.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image4.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image4.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image5.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image5.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image1.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image1.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image2.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image2.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image3.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image3.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image4.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image4.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image5.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image5.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image1.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image1.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image2.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image2.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image3.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image3.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image4.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image4.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image5.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image5.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image1.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image1.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image2.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image2.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image3.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image3.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image4.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image4.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image5.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image5.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image3.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image3.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image4.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image4.jpg') }}" width="72" height="72" alt="" /></a>
-    <a rel="lightbox" href="{{ asset('bundles/webweb/images/photos/image5.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image5.jpg') }}" width="72" height="72" alt="" /></a>
+    <!--
+    a class="lightbox" href="{{ asset('bundles/webweb/images/photos/image1.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image1.jpg') }}" width="114" height="114" alt="" /></a>
+    <a class="lightbox" href="{{ asset('bundles/webweb/images/photos/image2.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image2.jpg') }}" width="114" height="114" alt="" /></a>
+    <a class="lightbox" href="{{ asset('bundles/webweb/images/photos/image3.jpg') }}"><img src="{{ asset('bundles/webweb/images/photos/thumb_image3.jpg') }}" width="114" height="114" alt="" /></a
+    -->
+    
+    <ul id="gallery">
+        <li><a href="#"><img src="{{ asset('bundles/webweb/images/photos/image1.jpg') }}" width="114" height="114" alt=""/></a></li>
+        <li><a href="#"><img src="{{ asset('bundles/webweb/images/photos/image2.jpg') }}" width="114" height="114" alt="" /></a></li>
+        <li><a href="#"><img src="{{ asset('bundles/webweb/images/photos/image3.jpg') }}" width="114" height="114" alt="" /></a></li>
+        <li><a href="#"><img src="{{ asset('bundles/webweb/images/photos/image1.jpg') }}" width="114" height="114" alt=""/></a></li>
+        <li><a href="#"><img src="{{ asset('bundles/webweb/images/photos/image2.jpg') }}" width="114" height="114" alt="" /></a></li>
+        <li><a href="#"><img src="{{ asset('bundles/webweb/images/photos/image3.jpg') }}" width="114" height="114" alt="" /></a></li>
+        <li><a style="padding-right: 0px;" href="#"><img src="{{ asset('bundles/webweb/images/photos/image1.jpg') }}" width="114" height="114" alt=""/></a></li>
+        <li><a href="#"><img src="{{ asset('bundles/webweb/images/photos/image2.jpg') }}" width="114" height="114" alt="" /></a></li>
+        <li><a href="#"><img src="{{ asset('bundles/webweb/images/photos/image3.jpg') }}" width="114" height="114" alt="" /></a></li>
+        <li><a href="#"><img src="{{ asset('bundles/webweb/images/photos/image1.jpg') }}" width="114" height="114" alt=""/></a></li>
+        <li><a href="#"><img src="{{ asset('bundles/webweb/images/photos/image2.jpg') }}" width="114" height="114" alt="" /></a></li>
+        <li><a href="#"><img src="{{ asset('bundles/webweb/images/photos/image1.jpg') }}" width="114" height="114" alt=""/></a></li>
+        <li><a href="#"><img src="{{ asset('bundles/webweb/images/photos/image2.jpg') }}" width="114" height="114" alt="" /></a></li>
+        <li><a style="padding-right: 0px;" href="#"><img src="{{ asset('bundles/webweb/images/photos/image3.jpg') }}" width="114" height="114" alt="" /></a></li>
+    </ul>
+
 {% endblock %}
